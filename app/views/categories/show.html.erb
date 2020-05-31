@@ -1,0 +1,14 @@
+<h1> <%= @category.name %> </h1>
+
+<div class="link-container">
+  <%= link_to 'Edit', edit_category_path(@category.id) %>
+</div>
+<div class="link-container">
+  <%=
+    link_to 'Delete', category_path(@category.id), method: :delete,
+      data: { confirm: "Are you sure?" }, remote: true
+  %>
+</div>
+<div class="link-container">
+  <%= link_to 'Back to categories', categories_path %>
+</div>

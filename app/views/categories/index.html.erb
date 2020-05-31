@@ -1,0 +1,11 @@
+<h1>All categories</h1>
+<%= link_to "Create new category", new_category_path, class: 'ml-5 btn btn-success' %>
+<div class="posts-container">
+  <% @categories.each do |category| %>
+    <div class="category">
+
+      <%= link_to category do %>
+        <h3> <%= category.name %> </h3>
+      <% end %>
+  <% end %>
+</div>

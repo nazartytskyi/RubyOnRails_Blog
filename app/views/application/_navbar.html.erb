@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/posts">BLOG</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Posts
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <%= link_to 'All posts', posts_path, class: 'dropdown-item' %>
+        <div class="dropdown-divider"></div>
+        <% @categories.each do |category| %>
+            <%= link_to category do %>
+              <%= link_to category.name, filtered_posts_path(category), class: 'dropdown-item' %>
+            <% end %>
+        <% end %> 
+      </div>
+    </li>
+
+    <%= link_to 'Categories', categories_path, class: 'nav-link' %>
+  </ul>
+
+  <div class="d-flex ml-lg-4">
+    <% if current_user %>
+      <%= link_to 'Log Out', logout_path, class: "btn btn-outline-success" %>
+      <div class="user-info ml-1">Logged in as <br> <%= current_user.email %></div>
+    <% else %>
+      <%= link_to 'Sign Up', signup_path, class: "btn btn-outline-success"%> 
+      <%= link_to 'Log In', login_path, class: "btn btn-outline-success ml-1" %>
+    <% end %>
+  </div>
+</div>
+</nav>
