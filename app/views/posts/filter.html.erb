@@ -1,0 +1,3 @@
+<h1>All posts related to <%= @category.name %> category</h1>
+<%= link_to "Create new post", new_post_path, class: 'ml-5 btn btn-success' %>
+<%= render partial: 'list' %>

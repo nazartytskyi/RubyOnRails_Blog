@@ -19949,3 +19949,588 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 141ms (Views: 133.5ms | ActiveRecord: 0.7ms | Allocations: 20900)
 
 
+Started GET "/posts" for ::1 at 2020-05-31 20:14:41 +0300
+  [1m[35m (17.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 170.3ms | Allocations: 13911)
+  Rendered posts/index.html.erb within layouts/application (Duration: 188.6ms | Allocations: 14547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 50.9ms | Allocations: 6549)
+Completed 200 OK in 3975ms (Views: 3880.1ms | ActiveRecord: 12.0ms | Allocations: 90533)
+
+
+Started GET "/logout" for ::1 at 2020-05-31 20:14:51 +0300
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 1062)
+
+
+Started GET "/" for ::1 at 2020-05-31 20:14:51 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 35.6ms | Allocations: 4293)
+  Rendered posts/index.html.erb within layouts/application (Duration: 36.9ms | Allocations: 4406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 8.9ms | Allocations: 1820)
+Completed 200 OK in 181ms (Views: 177.3ms | ActiveRecord: 2.4ms | Allocations: 23829)
+
+
+Started GET "/posts/filter/3" for ::1 at 2020-05-31 20:14:54 +0300
+Processing by PostsController#filter as HTML
+  Parameters: {"category_id"=>"3"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `filter'
+  Rendering posts/filter.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 58.8ms | Allocations: 3389)
+  Rendered posts/filter.html.erb within layouts/application (Duration: 65.3ms | Allocations: 3638)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 16.7ms | Allocations: 1806)
+Completed 200 OK in 464ms (Views: 433.5ms | ActiveRecord: 3.0ms | Allocations: 23894)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-31 20:14:57 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorized rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 0.4ms | Allocations: 1121)
+
+
+Started GET "/login" for ::1 at 2020-05-31 20:14:57 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 528)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 10.0ms | Allocations: 1810)
+Completed 200 OK in 231ms (Views: 220.7ms | ActiveRecord: 0.6ms | Allocations: 20856)
+
+
+Started POST "/sessions" for ::1 at 2020-05-31 20:15:00 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"D1A48GMDQ2bcMoGqR9kiSnuJwmdVLLFCaql8ddlUikWsaET/p7ntvKy3uXlvcUGrYK24GQEry2TmRbl6IAfG3w==", "email"=>"super_admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "super_admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 361ms (ActiveRecord: 0.8ms | Allocations: 1221)
+
+
+Started GET "/" for ::1 at 2020-05-31 20:15:01 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 30.4ms | Allocations: 4293)
+  Rendered posts/index.html.erb within layouts/application (Duration: 31.1ms | Allocations: 4409)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 14.9ms | Allocations: 2182)
+Completed 200 OK in 152ms (Views: 148.7ms | ActiveRecord: 2.2ms | Allocations: 24166)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-31 20:15:03 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:13:in `map'
+  Rendered posts/_form.html.erb (Duration: 161.6ms | Allocations: 5788)
+  Rendered posts/new.html.erb within layouts/application (Duration: 168.9ms | Allocations: 6146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 8.9ms | Allocations: 2055)
+Completed 200 OK in 356ms (Views: 336.5ms | ActiveRecord: 1.1ms | Allocations: 26490)
+
+
+Started POST "/posts" for ::1 at 2020-05-31 20:15:17 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"ItfXELUVr56zz2xt80llmv4GIiWB+lN3QFh2yAXZ5XgVkI1rEUPIOl9Dh+Ny2Qa70DOm0Okge5mpaHlQNkgl+w==", "post"=>{"title"=>"Post 1", "text"=>"some pretty text", "category_id"=>"5"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Post 1"], ["text", "some pretty text"], ["category_id", 5], ["created_at", "2020-05-31 17:15:17.054886"], ["updated_at", "2020-05-31 17:15:17.054886"]]
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 50ms (ActiveRecord: 11.3ms | Allocations: 5936)
+
+
+Started GET "/posts/8" for ::1 at 2020-05-31 20:15:17 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:54:in `load_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:2
+  Rendered posts/show.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1105)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 13.1ms | Allocations: 2185)
+Completed 200 OK in 192ms (Views: 179.5ms | ActiveRecord: 2.2ms | Allocations: 22112)
+
+
+Started GET "/posts" for ::1 at 2020-05-31 20:15:19 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 43.7ms | Allocations: 5241)
+  Rendered posts/index.html.erb within layouts/application (Duration: 44.9ms | Allocations: 5354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 9.4ms | Allocations: 2176)
+Completed 200 OK in 166ms (Views: 162.6ms | ActiveRecord: 2.2ms | Allocations: 25117)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-31 20:15:26 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:13:in `map'
+  Rendered posts/_form.html.erb (Duration: 15.6ms | Allocations: 1696)
+  Rendered posts/new.html.erb within layouts/application (Duration: 17.3ms | Allocations: 1789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 30.5ms | Allocations: 2049)
+Completed 200 OK in 211ms (Views: 192.9ms | ActiveRecord: 1.1ms | Allocations: 21987)
+
+
+Started POST "/posts" for ::1 at 2020-05-31 20:16:21 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"Flmu9Hghp9IHd7vyDDduKEblzMsVTFTnGP+e7NF/vdohHvSP3HfAduv7UHyNpw0JaNBIPn2WfAnxz5F04u59WQ==", "post"=>{"title"=>"POST", "text"=>"qwer", "category_id"=>"3"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+  [1m[36mPost Create (13.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "POST"], ["text", "qwer"], ["category_id", 3], ["created_at", "2020-05-31 17:16:21.137105"], ["updated_at", "2020-05-31 17:16:21.137105"]]
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+  [1m[35m (19.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 74ms (ActiveRecord: 34.2ms | Allocations: 5702)
+
+
+Started GET "/posts/9" for ::1 at 2020-05-31 20:16:21 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:54:in `load_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:2
+  Rendered posts/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 14.6ms | Allocations: 2179)
+Completed 200 OK in 179ms (Views: 159.7ms | ActiveRecord: 3.1ms | Allocations: 21243)
+
+
+Started GET "/posts" for ::1 at 2020-05-31 20:16:24 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 183.8ms | Allocations: 6118)
+  Rendered posts/index.html.erb within layouts/application (Duration: 184.8ms | Allocations: 6229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 14.9ms | Allocations: 2176)
+Completed 200 OK in 310ms (Views: 305.1ms | ActiveRecord: 3.8ms | Allocations: 26004)
+
+
+Started GET "/categories" for ::1 at 2020-05-31 20:16:25 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1058)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 12.7ms | Allocations: 1520)
+Completed 200 OK in 171ms (Views: 162.6ms | ActiveRecord: 1.4ms | Allocations: 21008)
+
+
+Started GET "/categories/4" for ::1 at 2020-05-31 20:16:26 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_id"=>"4"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:45:in `load_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 13.5ms | Allocations: 2185)
+Completed 200 OK in 140ms (Views: 124.0ms | ActiveRecord: 1.1ms | Allocations: 20725)
+
+
+Started DELETE "/categories/4" for ::1 at 2020-05-31 20:16:32 +0300
+Processing by CategoriesController#delete as JS
+  Parameters: {"category_id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:45:in `load_category'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:34:in `delete'
+  [1m[36mPost Update All (0.9ms)[0m  [1m[33mUPDATE "posts" SET "category_id" = ? WHERE "posts"."category_id" = ?[0m  [["category_id", nil], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:34:in `delete'
+  [1m[36mCategory Destroy (37.5ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/categories_controller.rb:34:in `delete'
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:34:in `delete'
+Redirected to http://localhost:3000/categories
+Completed 200 OK in 513ms (ActiveRecord: 48.5ms | Allocations: 7721)
+
+
+Started GET "/categories" for ::1 at 2020-05-31 20:16:33 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 793)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 13.3ms | Allocations: 1449)
+Completed 200 OK in 203ms (Views: 197.8ms | ActiveRecord: 2.6ms | Allocations: 19826)
+
+
+Started GET "/posts" for ::1 at 2020-05-31 20:16:35 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 55.2ms | Allocations: 6118)
+  Rendered posts/index.html.erb within layouts/application (Duration: 57.9ms | Allocations: 6234)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 14.1ms | Allocations: 2104)
+Completed 200 OK in 180ms (Views: 175.7ms | ActiveRecord: 3.1ms | Allocations: 25918)
+
+
+Started GET "/categories" for ::1 at 2020-05-31 20:16:44 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 792)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 7.3ms | Allocations: 1449)
+Completed 200 OK in 212ms (Views: 192.3ms | ActiveRecord: 1.3ms | Allocations: 19818)
+
+
+Started GET "/categories/new" for ::1 at 2020-05-31 20:16:45 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 2.1ms | Allocations: 724)
+  Rendered categories/new.html.erb within layouts/application (Duration: 16.4ms | Allocations: 1073)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 12.1ms | Allocations: 2043)
+Completed 200 OK in 177ms (Views: 145.7ms | ActiveRecord: 1.1ms | Allocations: 21475)
+
+
+Started POST "/categories" for ::1 at 2020-05-31 20:16:54 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"yD2KI0ONtL8LQzf8TH9yjlaqOuBPLumX07ohNuHMQmEBtRpTWUTvSDDNI1nNcL3MesmRSdiI6moIm5eS2podcw==", "category"=>{"name"=>"For Removing"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "For Removing"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[36mCategory Create (17.6ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "For Removing"]]
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+Redirected to http://localhost:3000/categories/7
+Completed 302 Found in 66ms (ActiveRecord: 36.1ms | Allocations: 5735)
+
+
+Started GET "/categories/7" for ::1 at 2020-05-31 20:16:54 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_id"=>"7"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:45:in `load_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 11.6ms | Allocations: 2177)
+Completed 200 OK in 133ms (Views: 124.1ms | ActiveRecord: 1.1ms | Allocations: 20769)
+
+
+Started GET "/posts" for ::1 at 2020-05-31 20:16:58 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 40.3ms | Allocations: 6118)
+  Rendered posts/index.html.erb within layouts/application (Duration: 40.9ms | Allocations: 6234)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 13.6ms | Allocations: 2182)
+Completed 200 OK in 172ms (Views: 163.9ms | ActiveRecord: 2.3ms | Allocations: 25995)
+
+
+Started GET "/posts/9/edit" for ::1 at 2020-05-31 20:17:11 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:54:in `load_post'
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:13:in `map'
+  Rendered posts/_form.html.erb (Duration: 5.7ms | Allocations: 1767)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1999)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 20.6ms | Allocations: 2055)
+Completed 200 OK in 165ms (Views: 132.6ms | ActiveRecord: 1.8ms | Allocations: 22960)
+
+
+Started GET "/posts" for ::1 at 2020-05-31 20:17:16 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/_list.html.erb:2
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_list.html.erb:8
+  Rendered posts/_list.html.erb (Duration: 60.5ms | Allocations: 6117)
+  Rendered posts/index.html.erb within layouts/application (Duration: 61.4ms | Allocations: 6229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 14.7ms | Allocations: 2176)
+Completed 200 OK in 199ms (Views: 195.0ms | ActiveRecord: 2.7ms | Allocations: 25977)
+
+
+Started GET "/posts/7/edit" for ::1 at 2020-05-31 20:17:19 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:54:in `load_post'
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:13:in `map'
+  Rendered posts/_form.html.erb (Duration: 7.7ms | Allocations: 1737)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1833)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/application/_navbar.html.erb:17
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered application/_navbar.html.erb (Duration: 17.3ms | Allocations: 2049)
+Completed 200 OK in 132ms (Views: 121.4ms | ActiveRecord: 2.3ms | Allocations: 22567)
+
+

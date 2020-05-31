@@ -1,0 +1,17 @@
+<h1> <%= @post.title %> </h1>
+<p> <%= @post.category.name %> </p>
+<p> <%= @post.created_at %> </p>
+<p> <%= @post.text %> </p>
+
+<div class="link-container">
+  <%= link_to 'Edit', edit_post_path(@post.id) %>
+</div>
+<div class="link-container">
+  <%=
+    link_to 'Delete', post_path(@post.id), method: :delete,
+      data: { confirm: "Are you sure?" }, remote: true
+  %>
+</div>
+<div class="link-container">
+  <%= link_to 'Back to posts', posts_path %>
+</div>

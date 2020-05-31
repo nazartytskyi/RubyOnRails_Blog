@@ -1,0 +1,18 @@
+<div class="row justify-content-between">
+  <% @posts.each do |post| %>
+    <div class="col-11 col-md-5 card col-xl-4 card mt-2" style="width: 300px;">
+      <div class="card-body">
+       <%= link_to post do %>
+          <h4 class="card-title"><%= post.title %></h4>
+        <% end %>
+        <h6 class="card-subtitle mb-2 text-muted"><%= post.category.name %></h6>
+        <p class="card-subtitle mb-2 text-muted"><%= post.created_at %></p>
+        <p class="card-text text-truncate" style="height:55px"><%= post.text %> </p>
+        <%= link_to 'Edit', edit_post_path(post.id),class: 'card-link' %>
+        <%= link_to 'Delete', post_path(post.id), method: :delete,
+          data: { confirm: "Are you sure?" }, remote: true, class: 'card-link'
+        %>
+      </div>
+    </div>
+  <% end %>
+</div>
